@@ -1,20 +1,33 @@
 const countdownEl = document.getElementById("countdown");
 const messageEl = document.getElementById("message");
-const song = document.getElementById("song");
 
-// target: next january 1, 12:00 am
-const now = new Date();
-const newYear = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0);
+// get next new year
+function getNextNewYear() {
+  const now = new Date();
+  return new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0);
+}
 
-function updateCountdown() {
-  const currentTime = new Date();
-  const diff = newYear - currentTime;
+let newYear = getNextNewYear();
+let timer;
+
+function showCountdown() {
+  const now = new Date();
+  const diff = newYear - now;
 
   if (diff <= 0) {
-    document.body.classList.add("brat");
+    document.body.classList.add("newyear");
     countdownEl.classList.add("hidden");
     messageEl.classList.remove("hidden");
-    song.play().catch(() => {});
+
+    // reset after 1 hour
+    setTimeout(() => {
+      document.body.classList.remove("newyear");
+      countdownEl.classList.remove("hidden");
+      messageEl.classList.add("hidden");
+      newYear = getNextNewYear();
+      timer = setInterval(showCountdown, 1000);
+    }, 3600 * 1000);
+
     clearInterval(timer);
     return;
   }
@@ -29,5 +42,5 @@ function updateCountdown() {
     `${seconds.toString().padStart(2, "0")}`;
 }
 
-updateCountdown();
-const timer = setInterval(updateCountdown, 1000);
+showCountdown();
+timer = setInterval(showCountdown, 1000);
