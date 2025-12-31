@@ -11,6 +11,7 @@ function updateCountdown() {
   const diff = newYear - currentTime;
 
   if (diff <= 0) {
+    document.body.classList.add("brat");
     countdownEl.classList.add("hidden");
     messageEl.classList.remove("hidden");
     song.play().catch(() => {});
