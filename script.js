@@ -2,7 +2,7 @@ const countdownEl = document.getElementById("countdown");
 const messageEl = document.getElementById("message");
 const song = document.getElementById("song");
 
-// target: next january 1 at 12:00 am
+// target: next january 1, 12:00 am
 const now = new Date();
 const newYear = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0);
 
