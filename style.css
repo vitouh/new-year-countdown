@@ -6,13 +6,17 @@ body {
   align-items: center;
   background: white;
   color: black;
-  font-family: "Arial Narrow", Arial, sans-serif;
-  transition: background-color 1.5s ease;
+  font-family: Arial, sans-serif; /* fallback */
+  font-weight: 400;
+  letter-spacing: -0.02em; /* tight letters */
+  transform: scaleX(0.85); /* narrow effect */
+  transition: background-color 1.5s ease, transform 0.5s ease;
 }
 
 body.newyear {
   background: yellow;
   color: black;
+  transform: scaleX(1); /* normal for new year message */
 }
 
 #container {
@@ -22,7 +26,6 @@ body.newyear {
 #countdown,
 #message {
   font-size: 3rem;
-  letter-spacing: 0.05em;
 }
 
 .hidden {
