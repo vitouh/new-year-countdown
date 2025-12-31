@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: black;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+#container {
+  text-align: center;
+}
+
+#countdown,
+#message {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.hidden {
+  display: none;
+}
