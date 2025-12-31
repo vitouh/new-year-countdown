@@ -6,12 +6,13 @@ body {
   align-items: center;
   background: white;
   color: black;
-  font-family: "Archivo Narrow", Arial, sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif;
   transition: background-color 1.5s ease;
 }
 
-body.brat {
-  background: #7cff00; /* brat green */
+body.newyear {
+  background: yellow;
+  color: black;
 }
 
 #container {
